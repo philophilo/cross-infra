@@ -1,0 +1,10 @@
+name: Running terraform init
+on: workflow_call
+jobs:
+  Terraform Init:
+    runs-on: ubuntu-latest
+    container:
+      image: docker://philophilo/terraform-tut-actions:0.0.1
+    steps:
+      - name: Terraform init
+        run: terraform init
