@@ -1,0 +1,6 @@
+name: Terraform Infrastructure
+on: push
+jobs:
+    initialize-terraform:
+      uses: ./.github/workflows/terraform-init.yml
+      secrets: inherit
