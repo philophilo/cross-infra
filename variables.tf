@@ -53,3 +53,23 @@ variable "autoscaling_max_node_count" {
 variable "autoscaling_machine_type" {
   type = string
 }
+
+variable "external_address" {
+  type = string
+}
+
+variable "address_secret" {
+  type = string
+}
+
+variable "dns_zone" {
+  type = string
+}
+
+variable "ci_record_set" {
+  type = string
+}
+
+variable "monitoring_dns_record_set" {
+  type = string
+}
