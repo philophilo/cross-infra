@@ -8,7 +8,7 @@ resource "helm_release" "cert-manager" {
 
   values = [
     templatefile(
-      "${path.module}/template/cert-manager/values.yaml.tpl",
+      "${path.module}/helm/cert-manager/values.yaml.tpl",
       {
         "cert_chart_version" = var.cert_chart_version
         "cert_app_version" = var.cert_app_version
