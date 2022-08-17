@@ -17,3 +17,15 @@ variable "cluster_name" {
 variable "service_account" {
   type = string
 }
+
+variable "vpc" {
+  type = string
+}
+
+variable "subnet" {
+  type = string
+}
+
+variable "subnet_cidr" {
+  type = string
+}
