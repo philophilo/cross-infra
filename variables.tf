@@ -73,3 +73,15 @@ variable "ci_dns_record_set" {
 variable "monitoring_dns_record_set" {
   type = string
 }
+
+variable "argocd_namespace" {
+  type = string
+}
+
+variable "argocd_chart_version" {
+  type = string
+}
+
+variable "cert_manager_namespace" {
+  type = string
+}
