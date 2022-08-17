@@ -85,3 +85,11 @@ variable "argocd_chart_version" {
 variable "cert_manager_namespace" {
   type = string
 }
+
+variable "cert_chart_version" {
+  type = string
+}
+
+variable "cert_app_version" {
+  type = string
+}
