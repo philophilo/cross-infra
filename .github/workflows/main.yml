@@ -2,5 +2,10 @@ name: Terraform Infrastructure
 on: push
 jobs:
     initialize-terraform:
-      uses: ./.github/workflows/terraform-init.yml
-      secrets: inherit
+      runs-on: ubuntu-latest
+      container:
+        image: docker://philophilo/terraform-tut-actions:0.0.1
+      uses: actions/checkout@v4
+      steps:
+        - name: Terraform init
+          run: terraform init
