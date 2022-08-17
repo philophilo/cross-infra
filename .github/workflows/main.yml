@@ -5,7 +5,7 @@ jobs:
       runs-on: ubuntu-latest
       container:
         image: docker://philophilo/terraform-tut-actions:0.0.1
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
       steps:
         - name: Terraform init
           run: terraform init
