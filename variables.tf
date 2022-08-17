@@ -66,7 +66,7 @@ variable "dns_zone" {
   type = string
 }
 
-variable "ci_record_set" {
+variable "ci_dns_record_set" {
   type = string
 }
 

@@ -18,7 +18,7 @@ output "external_ip" {
 }
 
 resource "google_dns_record_set" "ci-record-set" {
-  name = "${ci_record_set}.${data.google_dns_managed_zone.zone.dns_name}"
+  name = "${var.ci_dns_record_set}.${data.google_dns_managed_zone.zone.dns_name}"
   type = "A"
   ttl  = 300
 
@@ -27,8 +27,8 @@ resource "google_dns_record_set" "ci-record-set" {
   rrdatas = [data.google_compute_address.cluster.address]
 }
 
-resource "google_dns_record_set" "kibana" {
-  name = "${monitoring_dns_record_set}.${data.google_dns_managed_zone.zone.dns_name}"
+resource "google_dns_record_set" "monitoring-record-set" {
+  name = "${var.monitoring_dns_record_set}.${data.google_dns_managed_zone.zone.dns_name}"
   type = "A"
   ttl  = 300
 
