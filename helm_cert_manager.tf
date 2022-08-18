@@ -7,16 +7,14 @@ resource "helm_release" "cert-manager" {
   namespace         = var.cert_manager_namespace
   dependency_update = true
 
-  values = [
-    <<-EOF
-    cert-manager:
-      installCRDs: true
-      enable-certificate-owner-ref: true
-      featureGates: "AdditionalCertificateOutputFormats=true"
-      prometheus:
-        enabled: false
-    EOF
-  ]
+  values = [templatefile("${path.module}/charts/cert-manager/values.yaml.tpl",
+    {
+      "gcp_secret_sa" = var.gcp_secret_sa
+      "cert_namespace" = var.cert_namespace
+      "gcp_secret_sa_credentials" = var.gcp_secret_sa_credentials
+      "dns_service_account" = var.service_account
+    }
+  )]
 
   set {
     name  = "webhook.extraArgs"
