@@ -7,13 +7,16 @@ resource "helm_release" "cert-manager" {
   namespace = var.cert_manager_namespace
 
   values = [
-    templatefile(
-      "${path.module}/helm/cert-manager/values.yaml.tpl",
-      {
-        "cert_chart_version" = var.cert_chart_version
-        "cert_app_version"   = var.cert_app_version
-      }
-    )
+    <<-EOF
+    cert-manager:
+      chart_version: "${var.cert_chart_version}"
+      app_version: "${var.cert_app_version}"
+      installCRDs: true
+      enable-certificate-owner-ref: true
+      featureGates: "AdditionalCertificateOutputFormats=true"
+      prometheus:
+        enabled: false
+    EOF
   ]
 
   set {
