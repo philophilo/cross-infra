@@ -1,0 +1,4 @@
+gcpSecretSA:
+certNamespace:
+gcpSecretSACredentials:
+dnsServiceAccount:
