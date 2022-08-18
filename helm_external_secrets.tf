@@ -10,6 +10,7 @@ resource "helm_release" "external-secrets" {
     <<-EOF
     external-secrets:
       installCRDs: true
+      es_version: ${var.external_secrets_version}
     EOF
   ]
 
