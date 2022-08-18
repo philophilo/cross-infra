@@ -1,4 +1,3 @@
-charts/**/charts/
+charts/**/charts/*.tgz
 charts/**/requirements.lock
-charts/**/values.yaml
 charts/**/Chart.lock
