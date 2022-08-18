@@ -13,6 +13,6 @@ resource "kubernetes_namespace" "cert-manager" {
 
 resource "kubernetes_namespace" "external-secrets" {
   metadata {
-    name = var.external-secrets
+    name = var.external_secrets_namespace
   }
 }

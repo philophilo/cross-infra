@@ -93,3 +93,11 @@ variable "cert_chart_version" {
 variable "cert_app_version" {
   type = string
 }
+
+variable "external_secrets_namespace" {
+  type = string
+}
+
+variable "external_secrets_version" {
+  type = string
+}
