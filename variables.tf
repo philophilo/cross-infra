@@ -117,3 +117,7 @@ variable "gcp_secret_sa_credentials" {
 variable "ip_secret_key" {
   type = string
 }
+
+variable "service_account_base64" {
+  type = string
+}
