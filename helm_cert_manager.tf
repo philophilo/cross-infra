@@ -12,7 +12,7 @@ resource "helm_release" "cert-manager" {
       "gcp_secret_sa" = var.gcp_secret_sa
       "cert_namespace" = var.cert_manager_namespace
       "gcp_secret_sa_credentials" = var.gcp_secret_sa_credentials
-      "dns_service_account" = var.service_account
+      "dns_service_account" = var.service_account_base64
     }
   )]
 
