@@ -10,8 +10,6 @@ resource "helm_release" "cert-manager" {
   values = [
     <<-EOF
     cert-manager:
-      chart_version: "${var.cert_chart_version}"
-      app_version: "${var.cert_app_version}"
       installCRDs: true
       enable-certificate-owner-ref: true
       featureGates: "AdditionalCertificateOutputFormats=true"

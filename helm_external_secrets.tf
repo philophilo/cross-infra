@@ -6,15 +6,9 @@ resource "helm_release" "external-secrets" {
   chart             = "./charts/external-secrets"
   dependency_update = true
 
-  values = [templatefile("${path.module}/charts/external-secrets/values.yaml.tpl",
-      {
-        "es_version" = var.external_secrets_version
-      }
-    )
+  values = [templatefile("${path.module}/charts/external-secrets/values.yaml.tpl"),
+    {
+    }
   ]
 
-  set {
-    name  = "es_version"
-    value = var.external_secrets_version
-  }
 }
