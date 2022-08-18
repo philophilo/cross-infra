@@ -1,0 +1,10 @@
+esNamespace:
+gcpsmSecretStore:
+gcpSecretSA:
+gcpSecretSACredentials:
+projectID:
+ipAddress:
+addressSecret:
+ipSecretKey:
+certNamespace:
+
