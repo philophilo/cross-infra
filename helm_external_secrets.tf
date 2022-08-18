@@ -6,12 +6,10 @@ resource "helm_release" "external-secrets" {
   chart             = "./charts/external-secrets"
   dependency_update = true
 
-  values = [
-    <<-EOF
-    external-secrets:
-      installCRDs: true
-      es_version: ${var.external_secrets_version}
-    EOF
+  values = [templatefile("${path.module}/charts/external-secrets.values.yaml.tpl"),
+  {
+    "es_version" = var.external_secrets_version
+  }
   ]
 
   set {
