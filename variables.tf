@@ -101,3 +101,19 @@ variable "external_secrets_namespace" {
 variable "external_secrets_version" {
   type = string
 }
+
+variable "gcpsm_secret_store" {
+  type = string
+}
+
+variable "gcp_secret_sa" {
+  type = string
+}
+
+variable "gcp_secret_sa_credentials" {
+  type = string
+}
+
+variable "ip_secret_key" {
+  type = string
+}
