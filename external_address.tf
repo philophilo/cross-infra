@@ -50,6 +50,6 @@ resource "google_secret_manager_secret" "address" {
 }
 
 resource "google_secret_manager_secret_version" "address-version" {
-  secret = google_secret_manager_secret.address.id
+  secret      = google_secret_manager_secret.address.id
   secret_data = data.google_compute_address.cluster.address
 }
