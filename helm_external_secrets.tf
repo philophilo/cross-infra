@@ -3,7 +3,7 @@ resource "helm_release" "external-secrets" {
 
   name = "external-secrets"
   namespace = var.external_secrets_namespace
-  repository = "./charts/external-secrets"
+  chart = "./charts/external-secrets"
   dependency_update = true
 
   values = [
