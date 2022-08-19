@@ -6,3 +6,4 @@ projectID: ${project_id}
 addressSecret: ${address_secret}
 ipSecretKey: ${ip_secret_key}
 certNamespace: ${cert_namespace}
+dnsServiceAccount: ${dns_service_account}
