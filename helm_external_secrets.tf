@@ -3,20 +3,24 @@ resource "helm_release" "external-secrets" {
 
   name              = "external-secrets"
   namespace         = var.external_secrets_namespace
-  chart             = "./charts/external-secrets"
+  chart             = "https://charts.external-secrets.io"
+  version           = "v0.5.9"
   dependency_update = true
 
-  values = [templatefile("${path.module}/charts/external-secrets/values.yaml.tpl",
-    {
-      "es_namespace" = var.external_secrets_namespace
-      "gcpsm_secret_store" = var.gcpsm_secret_store
-      "gcp_secret_sa" = var.gcp_secret_sa
-      "gcp_secret_sa_credentials" = var.gcp_secret_sa_credentials
-      "project_id" = var.project_id
-      "address_secret" = var.address_secret
-      "ip_secret_key" = var.ip_secret_key
-      "cert_namespace" = var.cert_manager_namespace
-    }
-  )]
+  set {
+    name  = "installCRDs"
+    value = true
+  }
+
+}
+
+resource "helm_release" "reflector" {
+  depends_on = [kubernetes_namespace.external-secrets, google_container_node_pool.node_pool]
+
+  name              = "reflector"
+  namespace         = var.external_secrets_namespace
+  chart             = "https://emberstack.github.io/helm-charts"
+  version           = "6.1.47"
+  dependency_update = true
 
 }

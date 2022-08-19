@@ -1,0 +1,13 @@
+external-secrets:
+  installCRDs: true
+cross-external-secrets:
+  esNamespace: external-secrets
+  gcpsmSecretStore: gcpsm-secret-store
+  gcpSecretSA: gcpsm-secrets
+  gcpSecretSACredentials: secret-access-credentials
+  projectID: vaulted-valor-356201
+  ipAddress: 34.139.196.175
+  addressSecret: address
+  ipSecretKey: ip
+  certNamespace: cert-manager
+  
