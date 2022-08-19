@@ -11,7 +11,7 @@ resource "helm_release" "cross-external-secrets" {
   chart             = "./charts/cross-external-secrets"
   dependency_update = true
 
-  values = [templatefile("${path.module}/charts/external-secrets/values.yaml.tpl",
+  values = [templatefile("${path.module}/charts/cross-external-secrets/values.yaml.tpl",
     {
       "es_namespace"              = var.external_secrets_namespace
       "gcpsm_secret_store"        = var.gcpsm_secret_store
