@@ -3,3 +3,14 @@ certNamespace: ${cert_namespace}
 esNamespace: ${es_namespace}
 gcpSecretSACredentials: ${gcp_secret_sa_credentials}
 dnsServiceAccount: ${dns_service_account}
+certName: ${cert_name}
+certSecretName: ${cert_secret_name}
+certIssuerRefName: ${cert_issuer_ref_name}
+certCommonName: ${cert_common_name}
+certDnsName: ${cert_dns_name}
+ciNamespace: ${ci_namespace}
+loggingNamespace: ${logging_namespace}
+projectID: ${project_id}
+acmeServer: ${acme_server}
+acmeEmail: ${acme_email}
+acmeAccountPrivateKey: ${acme_account_private_key}
