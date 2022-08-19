@@ -29,6 +29,6 @@ resource "helm_release" "cert-manager" {
 
   set {
     name  = "webhook.extraArgs"
-    value = "{--featureGates=\"AdditionalCertificateOutputFormats\"}"
+    value = {"--feature-gates=\"AdditionalCertificateOutputFormats\""}
   }
 }
