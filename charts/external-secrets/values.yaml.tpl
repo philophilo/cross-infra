@@ -1,3 +1,4 @@
+installCRDs: true
 external-secrets:
   installCRDs: true
 cross-external-secrets:
