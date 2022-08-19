@@ -19,9 +19,4 @@ resource "helm_release" "external-secrets" {
     }
   )]
 
-  set {
-    name = "installCRDs"
-    value = true
-  }
-
 }

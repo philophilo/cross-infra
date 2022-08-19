@@ -1,6 +1,3 @@
-installCRDs: true
-external-secrets:
-  installCRDs: true
 cross-external-secrets:
   esNamespace: ${es_namespace}
   gcpsmSecretStore: ${gcpsm_secret_store}
