@@ -6,7 +6,7 @@ resource "helm_release" "cross-cert-manager" {
     helm_release.cross-external-secrets
   ]
 
-  name              = "cert-manager"
+  name              = "cross-cert-manager"
   chart             = "./charts/cross-cert-manager"
   namespace         = var.cert_manager_namespace
   dependency_update = true
