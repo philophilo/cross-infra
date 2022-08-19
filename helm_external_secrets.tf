@@ -4,7 +4,8 @@ resource "helm_release" "external-secrets" {
   name              = "external-secrets"
   namespace         = var.external_secrets_namespace
   repository        = "https://charts.external-secrets.io"
-  chart             = "external-secrets/external-secrets"
+  chart             = "external-secrets"
+  version           = "v0.5.9"
 
   set {
     name  = "installCRDs"
@@ -19,6 +20,7 @@ resource "helm_release" "reflector" {
   name              = "reflector"
   namespace         = var.external_secrets_namespace
   repository        = "https://emberstack.github.io/helm-charts"
-  chart             = "emberstack/reflector"
+  chart             = "reflector"
+  version           = "6.1.47"
 
 }
