@@ -8,7 +8,7 @@ resource "helm_release" "cross-external-secrets" {
 
   name              = "cross-external-secrets"
   namespace         = var.external_secrets_namespace
-  chart             = "./charts/cross/external-secrets"
+  chart             = "./charts/cross-external-secrets"
   dependency_update = true
 
   values = [templatefile("${path.module}/charts/external-secrets/values.yaml.tpl",
