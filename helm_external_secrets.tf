@@ -1,5 +1,5 @@
 resource "helm_release" "external-secrets" {
-  depends_on = [kubernetes_namespace.external-secrets]
+  depends_on = [kubernetes_namespace.external-secrets, google_container_node_pool.node_pool]
 
   name              = "external-secrets"
   namespace         = var.external_secrets_namespace

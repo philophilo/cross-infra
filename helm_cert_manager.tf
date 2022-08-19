@@ -1,5 +1,5 @@
 resource "helm_release" "cert-manager" {
-  depends_on = [kubernetes_namespace.cert-manager]
+  depends_on = [kubernetes_namespace.cert-manager, google_container_node_pool.node_pool]
 
   name = "cert-manager"
   # repository = "https://charts.jetstack.io"
