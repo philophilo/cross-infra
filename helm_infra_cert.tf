@@ -1,4 +1,4 @@
-resource "helm_release" "cert-manager" {
+resource "helm_release" "cross-cert-manager" {
   depends_on = [
     kubernetes_namespace.cert-manager,
     google_container_node_pool.node_pool,
