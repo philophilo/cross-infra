@@ -6,7 +6,6 @@ resource "helm_release" "external-secrets" {
   repository        = "https://charts.external-secrets.io"
   chart             = "external-secrets/external-secrets"
   version           = "v0.5.9"
-  dependency_update = true
 
   set {
     name  = "installCRDs"
@@ -23,6 +22,5 @@ resource "helm_release" "reflector" {
   repository        = "https://emberstack.github.io/helm-charts"
   chart             = "emberstack/reflector"
   version           = "6.1.47"
-  dependency_update = true
 
 }
