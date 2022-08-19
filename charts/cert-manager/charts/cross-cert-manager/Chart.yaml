@@ -1,7 +1,0 @@
-apiVersion: v2
-appVersion: 0.0.1
-description: Cert manager for cross
-name: cross-cert-manager
-type: application
-version: 0.0.1
-
