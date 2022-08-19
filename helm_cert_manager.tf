@@ -18,8 +18,10 @@ resource "helm_release" "cert-manager" {
   }
 
   set {
-    name  = "featureGates"
-    value = "AdditionalCertificateOutputFormats=true"
+    name  = "feature-gates"
+    value = {
+      "AdditionalCertificateOutputFormats" = true
+    }
   }
 
   set {
