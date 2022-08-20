@@ -28,7 +28,7 @@ resource "helm_release" "cert-manager" {
 
   set {
     name  = "prometheus.enabled"
-    value = false
+    value = true
   }
 
   set {
