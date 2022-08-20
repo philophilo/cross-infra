@@ -23,6 +23,11 @@ resource "helm_release" "cert-manager" {
   }
 
   set {
+    name = "extraArgs"
+    value = "{--dns01-recursive-nameservers-only,--dns01-recursive-nameservers=8.8.8.8:53\,1.1.1.1:53}"
+  }
+
+  set {
     name  = "prometheus.enabled"
     value = false
   }
