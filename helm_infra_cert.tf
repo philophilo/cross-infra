@@ -24,6 +24,7 @@ resource "helm_release" "cross-cert-manager" {
       "cert_issuer_ref_name"      = var.cert_issuer_ref_name
       "cert_common_name"          = var.cert_common_name
       "cert_dns_name"             = var.cert_dns_name
+      "cert_dns_name_wild"        = var.cert_dns_name_wild
       "ci_namespace"              = var.ci_namespace
       "logging_namespace"         = var.logging_namespace
       "project_id"                = var.project_id

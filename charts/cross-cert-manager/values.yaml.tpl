@@ -8,6 +8,7 @@ certSecretName: ${cert_secret_name}
 certIssuerRefName: ${cert_issuer_ref_name}
 certCommonName: ${cert_common_name}
 certDnsName: ${cert_dns_name}
+certDnsNameWild: ${cert_dns_name_wild}
 ciNamespace: ${ci_namespace}
 loggingNamespace: ${logging_namespace}
 projectID: ${project_id}

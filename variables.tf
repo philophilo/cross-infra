@@ -142,6 +142,10 @@ variable "cert_dns_name" {
   type = string
 }
 
+variable "cert_dns_name_wild" {
+  type = string
+}
+
 variable "ci_namespace" {
   type = string
 }
