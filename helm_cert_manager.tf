@@ -13,18 +13,17 @@ resource "helm_release" "cert-manager" {
   }
 
   set {
-    name  = "enable-certificate-owner-ref"
-    value = true
-  }
-
-  set {
     name  = "featureGates"
     value = "AdditionalCertificateOutputFormats=true,"
   }
 
   set {
     name  = "extraArgs"
-    value = format("{%s,%s,%s}", "--dns01-recursive-nameservers-only", "--dns01-recursive-nameservers=8.8.8.8:53", "1.1.1.1:53")
+    value = format("{%s,%s,%s\,%s}",
+      "--enable-certificate-owner-ref=true",
+      "--dns01-recursive-nameservers-only",
+      "--dns01-recursive-nameservers=8.8.8.8:53",
+      "1.1.1.1:53")
   }
 
   set {
