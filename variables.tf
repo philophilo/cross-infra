@@ -121,3 +121,43 @@ variable "ip_secret_key" {
 variable "service_account_base64" {
   type = string
 }
+
+variable "cert_name" {
+  type = string
+}
+
+variable "cert_secret_name" {
+  type = string
+}
+
+variable "cert_issuer_ref_name" {
+  type = string
+}
+
+variable "cert_common_name" {
+  type = string
+}
+
+variable "cert_dns_name" {
+  type = string
+}
+
+variable "ci_namespace" {
+  type = string
+}
+
+variable "logging_namespace" {
+  type = string
+}
+
+variable "acme_server" {
+  type = string
+}
+
+variable "acme_email" {
+  type = string
+}
+
+variable "acme_account_private_key" {
+  type = string
+}
