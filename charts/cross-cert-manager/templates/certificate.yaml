@@ -8,9 +8,9 @@ spec:
   issuerRef:
     name: {{ .Values.certIssuerRefName }}
     kind: ClusterIssuer
-  commonName: {{ .Values.certCommonName }}
+  commonName: "{{ .Values.certCommonName }}"
   dnsNames:
-  - {{ .Values.certDnsName }}
+  - "{{ .Values.certDnsName }}"
   secretTemplate:
     annotations:
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
