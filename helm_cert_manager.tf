@@ -19,7 +19,7 @@ resource "helm_release" "cert-manager" {
 
   set {
     name  = "extraArgs"
-    value = format("{%s\\,%s\\,%s\\,%s}",
+    value = format("{%s,%s,%s\\,%s}",
       "--enable-certificate-owner-ref=true",
       "--dns01-recursive-nameservers-only",
       "--dns01-recursive-nameservers=8.8.8.8:53",
