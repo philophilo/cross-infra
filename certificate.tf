@@ -79,7 +79,7 @@ resource "google_privateca_certificate_authority" "cross-ca" {
 }
 
 resource "google_privateca_certificate" "cross-cert" {
-  pool = google_privateca_ca_pool.pool.name
+  pool = google_privateca_ca_pool.cross-pool.name
   certificate_authority = google_privateca_certificate_authority.cross-ca.certificate_authority_id
   project = var.project_id
   location = var.region
