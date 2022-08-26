@@ -4,6 +4,8 @@ provider "google" {
   credentials = var.service_account
 }
 
+provider "tls" {}
+
 data "google_client_config" "current" {}
 
 provider "kubernetes" {
