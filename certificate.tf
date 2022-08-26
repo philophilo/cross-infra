@@ -12,7 +12,7 @@ resource "tls_cert_request" "cross-key" {
 
   subject {
     common_name  = var.cert_common_name
-    organization = "cross"
+    organization = var.org_name
   }
 }
 
@@ -54,7 +54,7 @@ resource "google_privateca_certificate_authority" "cross-ca" {
   config {
     subject_config {
       subject {
-        organization = var.name
+        organization = var.org_name
         common_name = var.cert_common_name
       }
     }
