@@ -165,3 +165,19 @@ variable "acme_email" {
 variable "acme_account_private_key" {
   type = string
 }
+
+variable "ca_cert_algorithm" {
+  type = string
+}
+
+variable "pem_certificate_secret" {
+  type = string
+}
+
+variable "pem_certificate_chain_secret" {
+  type = string
+}
+
+variable "org_name" {
+  type = string
+}
