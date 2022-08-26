@@ -166,7 +166,7 @@ variable "acme_account_private_key" {
   type = string
 }
 
-variable "ca_cert_algorith" {
+variable "ca_cert_algorithm" {
   type = string
 }
 
