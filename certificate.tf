@@ -88,9 +88,12 @@ resource "google_privateca_certificate" "cross-cert" {
   pem_csr = tls_cert_request.cross-key.cert_request_pem
 }
 
-output "privateca" {
-  pem_certificate = google_privateca_certificate.cross-cert.pem_certificate
-  pem_certificate_chain = google_privateca_certificate.cross-cert.pem_certificate_chain
+output "pem_certificate" {
+  value = google_privateca_certificate.cross-cert.pem_certificate
+}
+
+output "pem_certificate_chain" {
+  value = google_privateca_certificate.cross-cert.pem_certificate_chain
 }
 
 resource "google_secret_manager_secret" "pem-certificate" {
