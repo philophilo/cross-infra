@@ -88,10 +88,10 @@ resource "google_privateca_certificate" "cross-cert" {
   pem_csr = tls_cert_request.cross-key.cert_request_pem
 }
 
-#output "privateca" {
-#  pem_certificate = google_privateca_certificate.cross-cert.pem_certificate
-#  pem_certificate_chain = google_privateca_certificate.cross-cert.pem_certificate_chain
-#}
+output "privateca" {
+  pem_certificate = google_privateca_certificate.cross-cert.pem_certificate
+  pem_certificate_chain = google_privateca_certificate.cross-cert.pem_certificate_chain
+}
 
 resource "google_secret_manager_secret" "pem-certificate" {
   secret_id = var.pem_certificate_secret
@@ -110,19 +110,19 @@ resource "google_secret_manager_secret_version" "pem-certificate-version" {
   secret_data = google_privateca_certificate.cross-cert.pem_certificate
 }
 
-resource "google_secret_manager_secret" "pem-certificate-chain" {
-  secret_id = var.pem_certificate_chain_secret
-  
-  labels = {
-    certificate = "public"
-  }
-
-  replication {
-    automatic = true
-  }
-}
-
-resource "google_secret_manager_secret_version" "pem-certificate-chain-version" {
-  secret = google_secret_manager_secret.pem-certificate-chain.id
-  secret_data = google_privateca_certificate.cross-cert.pem_certificate_chain
-}
+#resource "google_secret_manager_secret" "pem-certificate-chain" {
+#  secret_id = var.pem_certificate_chain_secret
+#  
+#  labels = {
+#    certificate = "public"
+#  }
+#
+#  replication {
+#    automatic = true
+#  }
+#}
+#
+#resource "google_secret_manager_secret_version" "pem-certificate-chain-version" {
+#  secret = google_secret_manager_secret.pem-certificate-chain.id
+#  secret_data = google_privateca_certificate.cross-cert.pem_certificate_chain
+#}
