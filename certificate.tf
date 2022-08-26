@@ -17,7 +17,7 @@ resource "tls_cert_request" "cross-key" {
 }
 
 resource "google_privateca_ca_pool" "cross-pool" {
-  name = "cross-pool"
+  name = "${var.org_name}-pool"
   location = var.region
   tier = "ENTERPRISE"
   project = var.project_id
@@ -55,7 +55,7 @@ resource "google_privateca_certificate_authority" "cross-ca" {
     subject_config {
       subject {
         organization = var.name
-        common_name = var.common_name
+        common_name = var.cert_common_name
       }
     }
     x509_config {
@@ -97,7 +97,7 @@ resource "google_privateca_certificate" "cross-cert" {
 resource "google_secret_manager_secret" "pem-certificate" {
   secret_id = var.pem_certificate_secret
   
-  labels {
+  labels = {
     certificate = "public"
   }
 
@@ -114,7 +114,7 @@ resource "google_secret_manager_secret_version" "pem-certificate-version" {
 resource "google_secret_manager_secret" "pem-certificate-chain" {
   secret_id = var.pem_certificate_chain_secret
   
-  labels {
+  labels = {
     certificate = "public"
   }
 

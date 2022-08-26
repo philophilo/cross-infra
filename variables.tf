@@ -177,3 +177,7 @@ variable "pem_certificate_secret" {
 variable "pem_certificate_chain_secret" {
   type = string
 }
+
+variable "org_name" {
+  type = string
+}
