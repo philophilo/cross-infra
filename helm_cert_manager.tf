@@ -1,7 +1,8 @@
 resource "helm_release" "cert-manager" {
-  depends_on = [kubernetes_namespace.cert-manager,
+  depends_on = [
+    kubernetes_namespace.cert-manager,
     google_container_node_pool.node_pool,
-    helm_release.nginx_ingress
+    helm_release.nginx-ingress
   ]
 
   name       = "cert-manager"
