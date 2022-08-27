@@ -9,4 +9,17 @@ resource "helm_release" "nginx-ingress" {
   chart = "ingress-nginx"
   namespace = var.ingress_namespace
   version = "4.2.1"
+
+  values = [
+    <<-EOF
+    controller:
+      service:
+        type: LoadBalancer
+        loadBalancerIP: ${data.google_compute_address.cluster.address}
+      admissionWebhooks:
+        enabled: flase
+      defaultBackend:
+        enabled: false
+    EOF
+  ]
 }
