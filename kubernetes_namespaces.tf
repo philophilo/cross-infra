@@ -27,3 +27,9 @@ resource "kubernetes_namespace" "logging" {
     name = var.logging_namespace
   }
 }
+
+resource "kubernetes_namespace" "nginx-ingress" {
+  metadata {
+    name = var.ingress_namespace
+  }
+}
