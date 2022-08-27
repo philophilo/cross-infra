@@ -167,5 +167,5 @@ variable "acme_account_private_key" {
 }
 
 variable "ingress_namespace" {
-  type = string 
-} 
+  type = string
+}

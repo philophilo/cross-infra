@@ -11,6 +11,7 @@ resource "helm_release" "cross-cert-manager" {
   chart             = "./charts/cross-cert-manager"
   namespace         = var.cert_manager_namespace
   dependency_update = true
+  force_update      = true
 
   values = [templatefile("${path.module}/charts/cross-cert-manager/values.yaml.tpl",
     {
