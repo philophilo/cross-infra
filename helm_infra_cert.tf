@@ -1,3 +1,8 @@
+locals {
+  // create a hash of all template files
+  temp_hash = sha1(join("", [for f in fileset("${path.module}/charts/cross-cert-manager/templates/", "**/*.yaml") : filesha1("${path.module}/charts/cross-cert-manager/templates/${f}")]))
+}
+
 resource "helm_release" "cross-cert-manager" {
   depends_on = [
     kubernetes_namespace.cert-manager,
@@ -32,6 +37,7 @@ resource "helm_release" "cross-cert-manager" {
       "acme_server"               = var.acme_server
       "acme_email"                = var.acme_email
       "acme_account_private_key"  = var.acme_account_private_key
+      "temp_hash"                  = locals.temp_hash
     }
   )]
 }
