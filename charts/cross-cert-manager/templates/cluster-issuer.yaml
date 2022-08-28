@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: {{ .Values.certIssuerRefName }}
+  temphash: {{ .Values.tempHash }}
 spec:
   acme:
     server: {{ .Values.acmeServer }}
@@ -9,9 +10,6 @@ spec:
     privateKeySecretRef:
       name: {{ .Values.acmeAccountPrivateKey }}
     solvers:
-    - dns01:
-        cloudDNS:
-          project: {{ .Values.projectID }}
-          serviceAccountSecretRef:
-            name: {{ .Values.gcpSecretSA }}
-            key: {{ .Values.gcpSecretSACredentials }}
+    - http01:
+        ingress:
+          class: nginx

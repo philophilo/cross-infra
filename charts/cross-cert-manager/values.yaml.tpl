@@ -15,3 +15,4 @@ projectID: ${project_id}
 acmeServer: ${acme_server}
 acmeEmail: ${acme_email}
 acmeAccountPrivateKey: ${acme_account_private_key}
+tempHash: ${temp_hash}
