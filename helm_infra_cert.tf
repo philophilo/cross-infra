@@ -37,7 +37,7 @@ resource "helm_release" "cross-cert-manager" {
       "acme_server"               = var.acme_server
       "acme_email"                = var.acme_email
       "acme_account_private_key"  = var.acme_account_private_key
-      "temp_hash"                  = locals.temp_hash
+      "temp_hash"                 = local.temp_hash
     }
   )]
 }
