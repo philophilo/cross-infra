@@ -169,3 +169,11 @@ variable "acme_account_private_key" {
 variable "ingress_namespace" {
   type = string
 }
+
+variable "cert_dns_monitoring" {
+  type = string
+}
+
+variable "cert_dns_ci" {
+  type = string
+}
