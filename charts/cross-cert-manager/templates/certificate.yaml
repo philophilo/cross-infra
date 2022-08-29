@@ -14,6 +14,8 @@ spec:
   commonName: "{{ .Values.certCommonName }}"
   dnsNames:
   - "{{ .Values.certDnsName }}"
+  - "{{ .Values.certDnsCi }}"
+  - "{{ .Values.certDnsMonitoring }}"
   secretTemplate:
     annotations:
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
