@@ -40,6 +40,8 @@ resource "helm_release" "cross-cert-manager" {
       "temp_hash"                 = local.temp_hash
       "cert_dns_monitoring"       = var.cert_dns_monitoring
       "cert_dns_ci"               = var.cert_dns_ci
+      "cert_dns_argocd"           = var.cert_dns_argocd
+      "argocd_namespace"          = var.argocd_namespace
     }
   )]
 }
