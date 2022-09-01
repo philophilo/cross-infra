@@ -24,6 +24,7 @@ resource "helm_release" "cross-external-secrets" {
       "jenkins_username"          = var.jenkins_username
       "jenkins_password"          = var.jenkins_password
       "argocd_namespace"          = var.argocd_namespace
+      "jenkins_account"          = var.jenkins_account
     }
   )]
 
