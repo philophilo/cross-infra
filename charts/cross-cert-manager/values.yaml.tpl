@@ -18,3 +18,5 @@ acmeAccountPrivateKey: ${acme_account_private_key}
 tempHash: ${temp_hash}
 certDnsCi: ${cert_dns_ci}
 certDnsMonitoring: ${cert_dns_monitoring}
+certDnsArgocd: ${cert_dns_argocd}
+argocdNamespace: ${argocd_namespace}

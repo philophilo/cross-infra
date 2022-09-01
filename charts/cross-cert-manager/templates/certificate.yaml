@@ -1,4 +1,4 @@
-{{- $namespaces := printf "%s, %s" .Values.ciNamespace .Values.loggingNamespace -}}
+{{- $namespaces := printf "%s, %s, %s" .Values.ciNamespace .Values.loggingNamespace .Values.argocdNamespace -}}
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -16,6 +16,7 @@ spec:
   - "{{ .Values.certDnsName }}"
   - "{{ .Values.certDnsCi }}"
   - "{{ .Values.certDnsMonitoring }}"
+  - "{{ .Values.certDnsArgocd }}"
   secretTemplate:
     annotations:
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"

@@ -37,6 +37,16 @@ resource "google_dns_record_set" "monitoring-record-set" {
   rrdatas = [data.google_compute_address.cluster.address]
 }
 
+resource "google_dns_record_set" "argocd-record-set" {
+  name = "${var.argocd_dns_record_set}.${data.google_dns_managed_zone.zone.dns_name}"
+  type = "A"
+  ttl  = 300
+
+  managed_zone = data.google_dns_managed_zone.zone.name
+
+  rrdatas = [data.google_compute_address.cluster.address]
+}
+
 resource "google_secret_manager_secret" "address" {
   secret_id = var.address_secret
 

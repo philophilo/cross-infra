@@ -205,3 +205,7 @@ variable "cert_dns_argocd" {
 variable "argocd_password" {
   type = string
 }
+
+variable "argocd_dns_record_set" {
+  type = string
+}
