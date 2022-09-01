@@ -17,23 +17,22 @@ resource "helm_release" "argocd" {
       image:
         imagePullPolicy: Always
       ingress:
-        enabled:
-          enabled: true
-          annotations:
-            nginx.ingress.kubernetes.io/ssl-redirect: "true"
-            cert-manager.io/cluster-issuer: ${var.cert_issuer_ref_name}
-            nginx.ingress.kubernetes.io/proxy-ssl-verify: 'on'
-            nginx.ingress.kubernetes.io/http2-push-preload: 'true'
-            nginx.ingress.kubernetes.io/backend-protocol: HTTPS
-          ingressClassName: "nginx"
-          hosts: ${var.cert_dns_argocd}
-          paths:
-            - path: /
-          pathType: Prefix
-          tls:
-          - secretName: ${var.cert_secret_name}
-            hosts:
-              - ${var.cert_dns_argocd}
+        enabled: true
+        annotations:
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
+          cert-manager.io/cluster-issuer: ${var.cert_issuer_ref_name}
+          nginx.ingress.kubernetes.io/proxy-ssl-verify: 'on'
+          nginx.ingress.kubernetes.io/http2-push-preload: 'true'
+          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+        ingressClassName: "nginx"
+        hosts: ${var.cert_dns_argocd}
+        paths:
+          - path: /
+        pathType: Prefix
+        tls:
+        - secretName: ${var.cert_secret_name}
+          hosts:
+            - ${var.cert_dns_argocd}
     repoServer:
       extraContainers:
       - name: cmp
