@@ -19,7 +19,7 @@ resource "helm_release" "argocd" {
         enabled:
           enabled: true
           hosts:
-            - ${var.cert_dns_argo}
+            - ${var.cert_dns_argocd}
     repoServer:
       extraContainers:
       - name: cmp
@@ -38,7 +38,7 @@ resource "helm_release" "argocd" {
             valueFrom:
               secretKeyRef:
                 name: ${replace(var.jenkins_password, "_", "-")}
-                key: ${var.jenkins_pasword_key}
+                key: ${var.jenkins_password_key}
         volumeMounts:
           - mountPath: /var/run/argocd
             name: var-files
