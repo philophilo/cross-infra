@@ -10,7 +10,7 @@ resource "helm_release" "argocd" {
   namespace  = var.argocd_namespace
   version    = var.argocd_chart_version
 
-  valued = [
+  values = [
     <<-EOF
     global:
       image:
