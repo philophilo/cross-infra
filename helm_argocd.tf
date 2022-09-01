@@ -27,7 +27,8 @@ resource "helm_release" "argocd" {
           nginx.ingress.kubernetes.io/http2-push-preload: 'true'
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         ingressClassName: "nginx"
-        hosts: ${var.cert_dns_argocd}
+        hosts:
+          - ${var.cert_dns_argocd}
         paths:
           - path: /
         pathType: Prefix
