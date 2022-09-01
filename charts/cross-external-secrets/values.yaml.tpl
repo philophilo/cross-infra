@@ -9,4 +9,6 @@ certNamespace: ${cert_namespace}
 argocdNamespace: ${argocd_namespace}
 jenkinsUsername: ${jenkins_username}
 jenkinsPassword: ${jenkins_password}
+jenkinsUsernameKey: ${jenkins_username_key}
+jenkinsPasswordKey: ${jenkins_password_key}
 jenkinsAccount: ${jenkins_account}

@@ -186,6 +186,14 @@ variable "jenkins_password" {
   type = string
 }
 
+variable "jenkins_username_key" {
+  type = string
+}
+
+variable "jenkins_password_key" {
+  type = string
+}
+
 variable "jenkins_account" {
   type = string
 }
