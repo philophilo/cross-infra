@@ -29,9 +29,6 @@ resource "helm_release" "argocd" {
         ingressClassName: "nginx"
         hosts:
           - ${var.cert_dns_argocd}
-        paths:
-          - path: /
-        pathType: Prefix
         tls:
         - secretName: ${var.cert_secret_name}
           hosts:
