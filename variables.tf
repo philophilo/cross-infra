@@ -197,3 +197,11 @@ variable "jenkins_password_key" {
 variable "jenkins_account" {
   type = string
 }
+
+variable "cert_dns_argocd" {
+  type = string
+}
+
+variable "argocd_password" {
+  type = string
+}
