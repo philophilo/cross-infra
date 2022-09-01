@@ -1,3 +1,8 @@
+locals {
+  // create a hash of all template files
+  ext_temp_hash = sha1(join("", [for f in fileset("${path.module}/charts/cross-external-secrets/templates/", "**/*.yaml") : filesha1("${path.module}/charts/cross-external-secrets/templates/${f}")]))
+}
+
 resource "helm_release" "cross-external-secrets" {
   depends_on = [
     kubernetes_namespace.external-secrets,
@@ -28,6 +33,7 @@ resource "helm_release" "cross-external-secrets" {
       "jenkins_password_key"      = var.jenkins_password_key
       "argocd_namespace"          = var.argocd_namespace
       "jenkins_account"           = var.jenkins_account
+      "ext_temp_hash"             = locals.ext_temp_hash
     }
   )]
 

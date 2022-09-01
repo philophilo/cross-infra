@@ -12,3 +12,4 @@ jenkinsPassword: ${jenkins_password}
 jenkinsUsernameKey: ${jenkins_username_key}
 jenkinsPasswordKey: ${jenkins_password_key}
 jenkinsAccount: ${jenkins_account}
+extTempHash: ${ext_temp_hash}
