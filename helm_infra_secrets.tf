@@ -21,6 +21,9 @@ resource "helm_release" "cross-external-secrets" {
       "address_secret"            = var.address_secret
       "ip_secret_key"             = var.ip_secret_key
       "cert_namespace"            = var.cert_manager_namespace
+      "jenkins_username"          = var.jenkins_username
+      "jenkins_password"          = var.jenkins_password
+      "argocd_namespace"          = var.argocd_namespace
     }
   )]
 

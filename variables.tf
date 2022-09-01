@@ -177,3 +177,11 @@ variable "cert_dns_monitoring" {
 variable "cert_dns_ci" {
   type = string
 }
+
+variable "jenkins_username" {
+  type = string
+}
+
+variable "jenkins_password" {
+  type = string
+}
