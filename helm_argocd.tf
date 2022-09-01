@@ -16,6 +16,8 @@ resource "helm_release" "argocd" {
     global:
       image:
         imagePullPolicy: Always
+    server:
+      name: cross-argocd
       ingress:
         enabled: true
         annotations:
