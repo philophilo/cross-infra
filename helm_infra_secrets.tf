@@ -10,6 +10,7 @@ resource "helm_release" "cross-external-secrets" {
   namespace         = var.external_secrets_namespace
   chart             = "./charts/cross-external-secrets"
   dependency_update = true
+  force_update      = true
 
   values = [templatefile("${path.module}/charts/cross-external-secrets/values.yaml.tpl",
     {
@@ -24,7 +25,7 @@ resource "helm_release" "cross-external-secrets" {
       "jenkins_username"          = var.jenkins_username
       "jenkins_password"          = var.jenkins_password
       "argocd_namespace"          = var.argocd_namespace
-      "jenkins_account"          = var.jenkins_account
+      "jenkins_account"           = var.jenkins_account
     }
   )]
 

@@ -8,7 +8,7 @@ resource "helm_release" "argocd" {
   version    = var.argocd_chart_version
 
   set {
-    name = "dev.enabled"
+    name  = "dev.enabled"
     value = false
   }
 
