@@ -33,7 +33,7 @@ resource "helm_release" "cross-external-secrets" {
       "jenkins_password_key"      = var.jenkins_password_key
       "argocd_namespace"          = var.argocd_namespace
       "jenkins_account"           = var.jenkins_account
-      "ext_temp_hash"             = locals.ext_temp_hash
+      "ext_temp_hash"             = local.ext_temp_hash
     }
   )]
 
