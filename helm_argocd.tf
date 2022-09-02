@@ -68,6 +68,7 @@ resource "helm_release" "argocd" {
           name: cmp-plugin
     configs:
       secret:
+        githubSecret: ${var.github_secret}
         argocdServerAdminPassword: "${var.argocd_password}"
         argocdServerAdminPasswordMtime: "2022-08-29T00:00:00Z"
 

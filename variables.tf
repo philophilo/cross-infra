@@ -209,3 +209,7 @@ variable "argocd_password" {
 variable "argocd_dns_record_set" {
   type = string
 }
+
+variable "github_secret" {
+  type = string
+}
