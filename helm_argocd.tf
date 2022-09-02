@@ -67,9 +67,9 @@ resource "helm_release" "argocd" {
             name: cmp-plugin
           name: cmp-plugin
     configs:
-      secrets:
+      secret:
         argocdServerAdminPassword: "${var.argocd_password}"
-        argocdServerAdminPasswordMtime: "MjAyMi0wOC0yOVQwMDowMDowMFoK"
+        argocdServerAdminPasswordMtime: "2022-08-29T00:00:00Z"
 
     EOF
   ]
