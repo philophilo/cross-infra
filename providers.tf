@@ -20,3 +20,5 @@ provider "helm" {
   }
 }
 
+provider "kustomization" {}
+
