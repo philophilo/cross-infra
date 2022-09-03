@@ -33,6 +33,18 @@ resource "helm_release" "argocd" {
         - secretName: ${var.cert_secret_name}
           hosts:
             - ${var.cert_dns_argocd}
+    controller:
+      env:
+        - name: ADMIN_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: ${replace(var.jenkins_username, "_", "-")}
+              key: ${var.jenkins_username_key}
+        - name: ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ${replace(var.jenkins_password, "_", "-")}
+              key: ${var.jenkins_password_key}
     repoServer:
       extraContainers:
       - name: cmp
