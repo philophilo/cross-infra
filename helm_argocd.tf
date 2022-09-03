@@ -73,11 +73,13 @@ resource "helm_release" "argocd" {
             subPath: plugin.yaml
             name: cmp-plugin
           - mountPath: /tmp
-            name: tmp-dir
+            name: cmp-tmp
       volumes:
         - configMap:
             name: cmp-plugin
           name: cmp-plugin
+        - emptyDir: {}
+          name: cmp-tmp
     configs:
       secret:
         githubSecret: ${var.github_secret}
